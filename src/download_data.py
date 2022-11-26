@@ -22,6 +22,16 @@ from docopt import docopt
 opt = docopt(__doc__)
 
 def main(url, out_file):
+    '''
+    Get the data through the url, read it and output a csv file 
+    
+    Parameters
+    ----------
+    url : str
+        URL from where to download the data
+    out_file : path
+        The output file path
+    '''
     data = pd.read_html(url)[0]
     try:
         data.to_csv(out_file, index=False)

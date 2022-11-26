@@ -21,6 +21,17 @@ from sklearn.model_selection import train_test_split
 opt = docopt(__doc__)
 
 def main(in_file, out_dir):
+    '''
+    Get the input raw data from the path, split the data into 75% and 25% train and test, 
+    clean up the data columns and save the data to the output path 
+    
+    Parameters
+    ----------
+    in_file : path
+        The input raw data file path
+    out_dir : path
+        The output processed data file path
+    '''
     # Read from raw data file downloaded from the source URL, and convert space in column names into underscore
     df = pd.read_csv(in_file, skiprows=[0], names=['REF', 'Company_(Manufacturer)', 'Company_Location', 'Review_Date', 'Country_of_Bean_Origin', 'Specific_Bean_Origin_or_Bar_Name', 'Cocoa_Percent', 'Ingredients', 'Most_Memorable_Characteristics', 'Rating'])
     

@@ -51,7 +51,16 @@ def save_chart(chart, filename, scale_factor=1):
         raise ValueError("Only svg and png formats are supported")
 
 def main(in_file, out_dir):
-
+    '''
+    Get the input file from the path and generate png and csv file to the out put path
+    
+    Parameters
+    ----------
+    in_file : path
+        The input file path
+    out_dir : path
+        The output file path
+    '''
     try:
         os.makedirs(os.path.dirname(out_dir + '/'))  # for plot saving
     except:

@@ -28,6 +28,16 @@ import pickle
 opt = docopt(__doc__)
 
 def main(in_file, out_dir):
+    '''
+    Get the input file from the path, apply DummyRegressor model and save the model to the output path 
+    
+    Parameters
+    ----------
+    in_file : path
+        The input file path
+    out_dir : path
+        The output file path
+    '''
     # Read data from training data (csv)
     train_df = pd.read_csv(in_file)
     

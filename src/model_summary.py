@@ -25,6 +25,26 @@ import pickle
 opt = docopt(__doc__)
 
 def main(in_file, model_dir, dummy, svr, ridge, out_dir):
+    '''
+    Get the DummyRegressor, SVR, Ridge model from the path,
+    apply all the model to the test data,
+    and save the scoring csv to the output path 
+    
+    Parameters
+    ----------
+    in_file : path
+        The input test data path
+    model_dir: path
+        The model files path
+    dummy: str
+        The DummyRegressor file name
+    svr: str
+        The SVR file name
+    ridge: str
+        The Ridge file name
+    out_dir : path
+        The output file path
+    '''
     
     # Read test data
     test_df = pd.read_csv(in_file)

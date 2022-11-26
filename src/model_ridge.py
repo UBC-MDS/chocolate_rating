@@ -58,6 +58,17 @@ def save_chart(chart, filename, scale_factor=1):
 
         
 def main(in_file, out_dir):
+    '''
+    Get the input file from the path, apply Ridge model, 
+    generate png and csv file, and save the model to the output path 
+    
+    Parameters
+    ----------
+    in_file : path
+        The input file path
+    out_dir : path
+        The output file path
+    '''
     # Read data from training data (csv)
     train_df = pd.read_csv(in_file)
     
@@ -133,7 +144,7 @@ def main(in_file, out_dir):
     # Dummy dataframe for plotting a diagonal line
     dummy_df = pd.DataFrame({'True': [0, 5], 'Predict': [0, 5]})
     
-    # Our plot
+    # The predict vs observation plot
     predict_vs_true = alt.Chart(plot_df, title = "Predict vs True (Ridge)").mark_point().encode(
         x=alt.X('True'),
         y=alt.Y('Predict')
